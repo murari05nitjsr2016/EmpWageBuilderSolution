@@ -3,15 +3,29 @@ package com.empwagebuildersolution;
 public class EmpWageBuilderSolution {
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to empwage");
-		int IS_EMP_PRESENT=1;
-		final int EMP_RATE_PER_HR=20;
-		final int IS_FULL_TIME_HRS=8;
-		double empCheck = Math.floor(Math.random() * 10 %2 );
-		if(empCheck == IS_EMP_PRESENT) {	
-			System.out.println("Employee is Present");
-			int salary = EMP_RATE_PER_HR * IS_FULL_TIME_HRS;
-			System.out.println("Salary  "+salary);
+		//Constatnts
+		int IS_PART_TIME=1;
+		int IS_FULL_TIME=2;
+		int EMP_RATE_PER_HOUR =20;
+		//Variables
+		int empHrs =0;
+		int empWage =0;
+		//Computation
+		double empCheck = Math.floor(Math.random() * 10 ) % 3 ;
+		if(empCheck == IS_FULL_TIME) {
+			empHrs = 8;
+			empWage = empHrs *  EMP_RATE_PER_HOUR;
+			System.out.println(" Full Time Emp WAGE " +empWage );
+		}
+		else if(empCheck == IS_PART_TIME) {
+			empHrs = 4;
+			empWage = empHrs *  EMP_RATE_PER_HOUR;
+			System.out.println("Part TimeEmp WAGE " +empWage );
+		}
+		else { 
+			empHrs= 0;
+			empWage = empHrs *  EMP_RATE_PER_HOUR;
+			System.out.println("Absent Emp WAGE " +empWage );
 		}
 
 
